@@ -2,9 +2,9 @@ import requests
 import json
 import time
 
-targetedSwitch = '00:00:00:00:00:00:00:03'
-sFlow_RT = 'http://localhost:8008'
-floodlight = 'http://localhost:8080'
+targetedSwitch = '00:00:00:00:00:00:00:01'
+sFlow_RT = 'http://192.168.10.4:8008'
+floodlight = 'http://192.168.10.6:8080'
 defense = {'icmp': True, 'syn': False, 'dns_amplifier': False, 'udp': False}
 black_list = []
 block_time = 360
