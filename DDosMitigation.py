@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-targetedSwitch = '00:00:00:00:00:00:00:01'
+targetedSwitch = '00:00:00:00:00:00:00:03'
 sFlow_RT = 'http://192.168.10.4:8008'
 floodlight = 'http://192.168.10.6:8080'
 defense = {'icmp': True, 'syn': False, 'dns_amplifier': False, 'udp': False}
@@ -67,14 +67,12 @@ while True:
                                 }
                                 push_data = json.dumps(message)
                                 r = requests.post(floodlight +'/wm/staticflowentrypusher/json', data=push_data)
- 
+
                             black_list.append([time.time()+block_time, push_data])
                             result = r.json()
                             print("result" + str(result))
                             break
-    else: 
-        continue
-    break
- 
-time.sleep(3)
+                        else:
+                            continue
+    time.sleep(3)
 
