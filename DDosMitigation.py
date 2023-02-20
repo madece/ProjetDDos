@@ -70,7 +70,7 @@ while True:
  
                             black_list.append([time.time()+block_time, push_data])
                             result = r.json()
-                            print(result['status'])
+                            print("result" + str(result))
                             break
     else: 
         continue
