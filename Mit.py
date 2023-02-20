@@ -39,7 +39,7 @@ while True:
         eventID = events[0]["eventID"]
         events.reverse()
         for e in events:
-            if e['metrics'] == icmp_flood_metric_name:
+            if e['metric'] == icmp_flood_metric_name:
                 r  = requests.get(sFlow_RT+ '/metric/' + e['agent'] + '/' + e['dataSource'] + '.' + e['metric'] + '/json')
                 metrics = r.json()
                 if metrics and metrics.__len__() > 0:
