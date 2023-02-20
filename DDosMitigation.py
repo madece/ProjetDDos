@@ -20,7 +20,7 @@ value = 'bytes' # set to 'bytes' and multiply 8 to get bits/second
 # define ICMP flood attack attributes #
 icmp_flood_keys = 'inputifindex,ethernetprotocol,macsource,macdestination,ipprotocol,ipsource,ipdestination'
 icmp_flood_metric_name = 'icmp_flood'
-icmp_flood_threshold_value = 20
+icmp_flood_threshold_value = 2000
 icmp_flood_flows = {'keys': icmp_flood_keys, 'value': value} # No filter, the script will monitor every host
 icmp_flood_threshold = {'metric': icmp_flood_metric_name, 'value': icmp_flood_threshold_value}
 
