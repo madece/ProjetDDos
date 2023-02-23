@@ -4,7 +4,7 @@ import time
 
 targetedSwitch = '00:00:00:00:00:00:00:03'
 sFlow_RT = 'http://192.168.10.4:8008'
-floodlight = 'http://192.168.10.6:8080'
+floodlight = 'http://192.168.10.9:8080'
 defense = {
     'icmp': True,
     'syn': False,
@@ -20,7 +20,7 @@ value = 'bytes' # set to 'bytes' and multiply 8 to get bits/second
 # define ICMP flood attack attributes #
 icmp_flood_keys = 'inputifindex,ethernetprotocol,macsource,macdestination,ipprotocol,ipsource,ipdestination'
 icmp_flood_metric_name = 'icmp_flood'
-icmp_flood_threshold_value = 5000
+icmp_flood_threshold_value = 1000
 icmp_flood_flows = {'keys': icmp_flood_keys, 'value': value} # No filter, the script will monitor every host
 icmp_flood_threshold = {'metric': icmp_flood_metric_name, 'value': icmp_flood_threshold_value}
 
